@@ -49,6 +49,7 @@
                     android:textSize="17sp"
                     android:textStyle="bold"
                     android:textColor="@color/darker"
+                    android:layout_marginStart="5dp"
                     app:layout_constraintStart_toEndOf="@id/repoName_text"
                     app:layout_constraintTop_toTopOf="@id/repoName_text"/>
 
@@ -70,6 +71,7 @@
                     android:text="@{gitHupRepo.owner.login}"
                     android:textSize="17sp"
                     android:textStyle="bold"
+                    android:layout_marginStart="5dp"
                     android:textColor="@color/darkGray"
                     app:layout_constraintStart_toEndOf="@id/owner_text"
                     app:layout_constraintTop_toTopOf="@id/owner_text"/>

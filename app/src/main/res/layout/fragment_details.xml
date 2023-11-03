@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.fragment.DetailsFragment"
-        android:layout_margin="30dp">
+        android:layout_margin="20dp">
 
         <ImageView
             android:id="@+id/avatar"
@@ -47,6 +47,7 @@
             app:layout_constraintTop_toTopOf="@id/repo_text"
             app:layout_constraintStart_toEndOf="@id/repo_text"
             android:text="@{details.name}"
+            android:layout_marginStart="3dp"
             android:textSize="19sp"
             android:textStyle="bold"
             android:textColor="@color/darker"
@@ -71,6 +72,7 @@
             app:layout_constraintStart_toEndOf="@id/login_text"
             app:layout_constraintTop_toTopOf="@id/login_text"
             android:text="@{details.owner.login}"
+            android:layout_marginStart="3dp"
             android:textSize="19sp"
             android:textStyle="bold"
             android:textColor="@color/darker"
@@ -91,17 +93,21 @@
 
         <TextView
             android:id="@+id/description"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:maxLines="5"
-            app:layout_constraintStart_toEndOf="@id/description_text"
-            app:layout_constraintTop_toTopOf="@id/description_text"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:maxLines="3"
+            android:inputType="textMultiLine"
+            android:layout_marginStart="3dp"
+            app:layout_constraintStart_toStartOf="@id/description_text"
+            app:layout_constraintTop_toBottomOf="@id/description_text"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
             android:text="@{details.description}"
-            android:textSize="18sp"
+            android:textSize="17sp"
             android:textStyle="bold"
             android:textColor="@color/darker"
-            />
+            android:ellipsize="end"
+            tools:ignore="TextViewEdits" />
 
         <TextView
             android:id="@+id/createdDate_text"
@@ -109,10 +115,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
             app:layout_constraintStart_toStartOf="@id/description_text"
-            app:layout_constraintTop_toBottomOf="@id/description_text"
+            app:layout_constraintTop_toBottomOf="@id/description"
             android:text="@string/created_at"
             android:textSize="19sp"
-            android:textStyle="bold|italic"
+            android:textStyle="bold"
             android:textColor="@color/darker"
             />
 
@@ -125,6 +131,7 @@
             android:textSize="19sp"
             android:textStyle="bold|italic"
             android:textColor="@color/darker"
+            android:paddingStart="6dp"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
