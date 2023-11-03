@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="gitHupRepo"
+            type="com.asoom.domain.entity.GitHupRepo" />
+    </data>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:cardCornerRadius="15dp"
+            android:layout_margin="10dp"
+            android:background="@color/white">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp">
+                <ImageView
+                    android:id="@+id/avatar"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@{gitHupRepo.owner.avatar_url}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:scaleType="fitStart"
+                    android:contentDescription="@string/avatar" />
+
+                <TextView
+                    android:id="@+id/repoName_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/repo"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="12dp"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/darker"
+                    app:layout_constraintStart_toEndOf="@id/avatar"
+                    app:layout_constraintTop_toTopOf="@id/avatar"/>
+                <TextView
+                    android:id="@+id/repoName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{gitHupRepo.name}"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/darker"
+                    app:layout_constraintStart_toEndOf="@id/repoName_text"
+                    app:layout_constraintTop_toTopOf="@id/repoName_text"/>
+
+                <TextView
+                    android:id="@+id/owner_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/owner"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/darkGray"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="@id/repoName_text"
+                    app:layout_constraintTop_toBottomOf="@id/repoName_text"/>
+                <TextView
+                    android:id="@+id/owner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{gitHupRepo.owner.login}"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/darkGray"
+                    app:layout_constraintStart_toEndOf="@id/owner_text"
+                    app:layout_constraintTop_toTopOf="@id/owner_text"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+</layout>
