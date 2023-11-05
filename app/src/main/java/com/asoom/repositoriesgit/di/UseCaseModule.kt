@@ -1,6 +1,6 @@
 package com.asoom.repository.di
 
-import com.asoom.domain.repo.RepoRepository
+import com.asoom.domain.repo.repository.RepoRepository
 import com.asoom.domain.usecase.FetchRepositoriesUseCase
 import dagger.Module
 import dagger.Provides

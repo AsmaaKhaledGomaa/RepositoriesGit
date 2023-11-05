@@ -1,10 +1,11 @@
 package com.asoom.domain.entity
 
-import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
+import com.google.gson.annotations.SerializedName
 
-@Parcelize
 data class Owner(
-    val login: String,
-    val avatar_url: String
-): Parcelable
+    @field:SerializedName("login")
+    val login: String? = null ,
+
+    @field:SerializedName("avatar_url")
+    val avatarUrl: String? = null
+)

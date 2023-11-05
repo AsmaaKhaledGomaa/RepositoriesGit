@@ -1,6 +1,5 @@
-package com.asoom.repository.di
+package com.asoom.data.remote
 
-import com.asoom.data.remote.GitHubApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.components.SingletonComponent

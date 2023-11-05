@@ -1,14 +1,21 @@
 package com.asoom.domain.entity
 
-import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
+import com.google.gson.annotations.SerializedName
 
-@Parcelize
 data class RepoDetails(
-    val id: Long,
-    val name: String,
-    val owner: Owner,
-    val description: String,
-    val languages_url: String,
-    val created_at: String
-): Parcelable
+
+    @field:SerializedName("id")
+    val id: Long? = null,
+
+    @field:SerializedName("name")
+    val name: String? = null,
+
+    @field:SerializedName("description")
+    val description: String? = null,
+
+    @field:SerializedName("created_at")
+    val createdAt: String? = null,
+
+    @field:SerializedName("owner")
+    val owner: Owner? = null,
+)

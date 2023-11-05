@@ -24,7 +24,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="ContentDescription"
-            loadImageFromUrl="@{details.owner.avatar_url}"
+            loadImageFromUrl="@{details.owner.avatarUrl}"
             />
 
         <TextView

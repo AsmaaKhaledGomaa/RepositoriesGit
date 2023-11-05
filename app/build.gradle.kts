@@ -92,4 +92,14 @@ dependencies {
     // Picasso
     implementation ("com.squareup.picasso:picasso:2.8")
 
+    // Room
+    implementation ("androidx.paging:paging-runtime:3.2.1")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel:2.6.2")
+    implementation ("androidx.lifecycle:lifecycle-livedata:2.6.2")
+    implementation ("androidx.lifecycle:lifecycle-common-java8:2.6.2")
+    implementation ("androidx.room:room-runtime:2.6.0")
+    kapt ("androidx.room:room-compiler:2.6.0")
+    implementation ("androidx.room:room-ktx:2.6.0")
+
+
 }

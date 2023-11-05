@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.asoom.repositoriesgit.R
 import com.asoom.repositoriesgit.databinding.FragmentDetailsBinding
 import com.asoom.repositoriesgit.viewmodel.RepoDetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -75,8 +74,8 @@ class DetailsFragment : Fragment() {
                 binding.details = details
                 details?.let {
                     val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-                    val date = dateFormat.parse(it.created_at)
-                    val formattedDate = formatCreationDate(date)
+                    val date = dateFormat.parse(it.createdAt!!)
+                    val formattedDate = formatCreationDate(date!!)
                     binding.createdDate.text = formattedDate
                 }
             }

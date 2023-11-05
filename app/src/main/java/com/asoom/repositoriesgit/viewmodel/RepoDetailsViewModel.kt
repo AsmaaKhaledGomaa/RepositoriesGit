@@ -13,8 +13,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class RepoDetailsViewModel @Inject constructor
-    (private val fetchRepoDetailsUseCase: FetchRepoDetailsUseCase
+class RepoDetailsViewModel @Inject constructor(
+    private val fetchRepoDetailsUseCase: FetchRepoDetailsUseCase
 ) : ViewModel() {
 
     private val _repositoryDetails = MutableStateFlow<RepoDetails?>(null)
@@ -25,11 +25,10 @@ class RepoDetailsViewModel @Inject constructor
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val newRepoDetails = fetchRepoDetailsUseCase(owner, repo)
-                Log.d("Fragment", "DetailsViewModel: $newRepoDetails")
+                Log.d("Print", "DetailsViewModel: $newRepoDetails")
                 _repositoryDetails.value = newRepoDetails
             } catch (e: Exception) {
-                Log.e("Fragment", "RepoDetailsViewModel: Error fetching details: $e")
-                throw e
+                Log.e("print", "RepoDetailsViewModel: Error fetching details: $e")
             }
         }
     }
